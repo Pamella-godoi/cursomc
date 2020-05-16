@@ -2,12 +2,25 @@ package com.pamella.cursomc.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+
 public class Categoria implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	// criar de forma automatica as variaveis no banco de dados
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	
 	// atributos da classe
 	private Integer id;
 	private String nome;
+	
 	
 	
 	//construtor vazio para instanciar objeto sem jogar nada para os atributos
